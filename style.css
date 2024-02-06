@@ -1,0 +1,139 @@
+/* Base styles */
+body {
+  font-family: Arial, sans-serif;
+}
+
+/* Light mode */
+body {
+  background-color: #fff;
+  color: #333;
+}
+
+/* Dark mode */
+body.dark-mode {
+  background-color: #222;
+  color: #fff;
+}
+
+/* Header */
+header {
+  background-color: #333;
+  color: #fff;
+  padding: 20px 0;
+}
+
+header h1 {
+  margin: 0;
+}
+
+header img {
+  width: 400px; /* Increased width */
+  height: 400px; /* Increased height */
+  margin-right: 10px; /* Add margin to the right to create space */
+  float:right;
+}
+
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li {
+  display: inline;
+  margin-right: 20px;
+}
+
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+/* Main content */
+main {
+  padding: 20px;
+}
+
+section {
+  margin-bottom: 30px;
+  display: none; /* Hide all sections by default */
+}
+
+section.active {
+  display: block;
+}
+
+section h2 {
+  color: #333;
+}
+
+section p {
+  line-height: 1.6;
+}
+
+/* Footer */
+footer {
+  background-color: #333;
+  color: #fff;
+  padding: 20px;
+}
+
+.social-icons {
+  margin-top: 10px;
+}
+
+.social-icons a {
+  color: #fff;
+}
+
+/* Toggle button */
+#toggle-dark-mode {
+  background-color: #333;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+/* Blog post */
+.blog-post {
+  margin-bottom: 30px;
+}
+
+.blog-post h3 {
+  color: #333;
+}
+
+.blog-post p {
+  line-height: 1.6;
+}
+
+.blog-post button, .blog-post .comments button {
+  background-color: #333;
+  color: #fff;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+.blog-post .likes {
+  margin-left: 5px;
+}
+
+.blog-post .comments {
+  margin-top: 10px;
+}
+
+.blog-post .comments input[type="text"] {
+  width: 200px;
+  padding: 5px;
+}
+
+/* Social icons */
+.social-icons img {
+  width: 40px; /* Increased width */
+  height: 40px; /* Increased height */
+  margin-right: 10px;
+}

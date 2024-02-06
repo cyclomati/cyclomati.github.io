@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Anmol Sharma - Personal Website</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <h1>Anmol Sharma</h1>
+  <nav>
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#achievements">Achievements</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#blog">Blog</a></li>
+    </ul>
+  </nav>
+  <button id="toggle-dark-mode">Toggle Dark Mode</button>
+</header>
+
+<header>
+  <img src="profilepicture.jpg" alt="Profile Picture">
+  <h1>Anmol Sharma</h1>
+  <nav>
+    <!-- Navigation links -->
+  </nav>
+</header>
+
+<main>
+  <section id="about" class="active">
+    <!-- Content of About section -->
+    <h2>About Me</h2>
+    <p>I am Anmol Sharma,</p>
+    <p>a first-year CSE student at IIIT Hyderabad.</p>
+    <p>Passionate about coding and exploring the vast world of technology.</p>
+    <p>Coding enthusiast & continuous learner.</p>
+    <p>E-sports and anime fan.</p>
+    <p>Love playing basketball and table tennis.</p>
+    <p>Enjoy listening to music and playing musical instruments.</p>
+    <p>In my downtime, I like to enjoy web series.</p>
+    <p>Let's connect and share our coding adventures!</p>
+  </section>
+
+  <section id="education" class="active">
+    <!-- Content of Education section -->
+    <h2>Educational Background</h2>
+    <p>I have completed my schooling from Sarvodaya Sr. Secondary School.</p>
+    <p>From 9th to 12th, I prepared for JEE in Allen Kota.</p>
+    <p>After that, I got admission in IIIT Hyderabad CSE.</p>
+  </section>
+
+  <section id="achievements" class="active">
+    <!-- Content of Achievements section -->
+    <h2>Achievements</h2>
+    <ul>
+      <li>Cleared JEE Mains with 99.95 percentile.</li>
+      <li>Cleared NTSE and scored exceptionally well in boards.</li>
+      <li>Getting into IIIT Hyderabad.</li>
+    </ul>
+  </section>
+
+  <section id="skills" class="active">
+    <!-- Content of Skills section -->
+    <h2>Skills</h2>
+    <ul>
+      <li>Proficient in problem solving</li>
+      <li>I excel in problem-solving through logical thinking and creativity.</li>
+      <li>I break down complex issues into manageable parts, finding efficient solutions.</li>
+      <li>Whether in coding or collaboration, I enjoy problem-solving and continually seek to enhance these skills.</li>
+      <li>My commitment to learning ensures effective solutions in any professional context.</li>
+      <li>Programming Languages: C, C++, HTML, CSS, JavaScript</li>
+      <li>Operating System: Linux</li>
+    </ul>
+  </section>
+
+  <section id="blog" class="active">
+    <!-- Content of Blog section -->
+    <h2>Blog</h2>
+    <div class="blog-post">
+      <h3>Blog Post 1</h3>
+      <p>Description of the blog post...</p>
+      <button onclick="likePost('post1')">Like</button>
+      <span class="likes" id="likes-post1">0</span> Likes
+      <div class="comments">
+        <h4>Comments</h4>
+        <input type="text" id="comment-post1" placeholder="Add a comment...">
+        <button onclick="addComment('post1')">Comment</button>
+        <ul id="comments-post1"></ul>
+      </div>
+    </div>
+    <div class="blog-post">
+      <h3>Blog Post 2</h3>
+      <p>Description of the blog post...</p>
+      <button onclick="likePost('post2')">Like</button>
+      <span class="likes" id="likes-post2">0</span> Likes
+      <div class="comments">
+        <h4>Comments</h4>
+        <input type="text" id="comment-post2" placeholder="Add a comment...">
+        <button onclick="addComment('post2')">Comment</button>
+        <ul id="comments-post2"></ul>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="social-icons">
+    <a href="https://github.com/"><img src="git.png" alt="GitHub"></a>
+    <a href="mailto:youremail@example.com"><img src="gmail.png" alt="Email"></a>
+    <!-- Add other social icons as needed -->
+  </div>
+  <a href="your-resume.pdf">Download Resume</a>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
