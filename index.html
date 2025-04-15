@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anmol Sharma | Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+
+<body id="home">
+
+    <!-- Toggle Dark/Light Mode -->
+    <div class="toggle-btn" onclick="toggleMode()">☀️ / 🌙</div>
+
+    <header>
+        <h1>I am <span class="typewriter"></span></h1>
+        <p>Aspiring Software Engineer</p>
+    </header>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <a href="#home">Home</a>
+        <a href="#about">About Me</a>
+        <a href="#education">Education</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#achievements">Achievements</a>
+        <a href="#text-analysis">Text Analysis</a>
+        <a href="#cv">Download CV</a>
+    </nav>
+
+    <!-- About Section -->
+    <section id="about">
+        <h2>About Me</h2>
+    
+        <div class="profile-container">
+            <img src="anmol.jpg" alt="Anmol Sharma">
+        </div>
+    
+        <p>I am <strong> Anmol Sharma</strong>, CSE student at IIIT Hyderabad.</p>
+    
+        <p>I’m from Patna, Bihar.</p>
+    
+        <p>Passionate about coding and exploring the vast world of technology.</p>
+    
+        <p>Coding enthusiast & continuous learner.</p>
+    
+        <p>E-sports and anime fan.</p>
+    
+        <p>Love playing basketball and table tennis.</p>
+    
+        <p>Enjoy listening to music and playing musical instruments.</p>
+    
+        <p>In my downtime, I like to enjoy web series.</p>
+    
+        <p>Let's connect and share our coding adventures!</p>
+    
+        <div class="profile-container">
+            <img src="birthplace.jpg" alt="Birthplace">
+            <img src="birthplace2.jpg" alt="Birthplace">
+        </div>
+    </section>
+
+    <section id="education">
+        <h2>Education</h2>
+        <p>I have completed my schooling from <strong>Sarvodaya Sr. Secondary School</strong>.</p>
+        <p>From 9th to 12th, I prepared for JEE in <strong>Allen, Kota</strong>.</p>
+        <p>After that, I got admission to <strong>IIIT Hyderabad</strong> in the <strong>Computer Science and Engineering (CSE)</strong> program.</p>
+        <p><strong>JEE Mains Rank:</strong> 778 (99.94 Percentile)</p>
+    </section>
+
+    <section id="skills">
+        <h2>Technical Skills</h2>
+    
+        <div class="skills-container">
+    
+            <div class="skill-card">
+                <h3>Problem Solving</h3>
+                <p>I excel in problem-solving through logical thinking and creativity. I break down complex issues into manageable parts, finding efficient solutions. Whether in coding or collaboration, I enjoy problem-solving and continually seek to enhance these skills.</p>
+            </div>
+    
+            <div class="skill-card">
+                <h3>Programming Languages</h3>
+                <p>C, C++, Python, Java, JavaScript, HTML5, CSS3, SQL, Bash</p>
+            </div>
+    
+            <div class="skill-card">
+                <h3>Operating System</h3>
+                <p>Linux</p>
+            </div>
+    
+        </div>
+    </section>
+
+    <section id="projects">
+        <h2>Projects</h2>
+    
+        <div class="project-list">
+            <div class="project-item">
+                <a href="https://github.com/cyclomati/AIr-Piano-Interactive-AI-Powered-Musical-Instrument.git" target="_blank">
+                    <h3>AIr Piano</h3>
+                    <p>AI-Powered Musical Instrument</p>
+                </a>
+            </div>
+    
+            <div class="project-item">
+                <a href="https://github.com/cyclomati/Photo-slideshow-App-Web-Based-Video-Creation-Platform-.git" target="_blank">
+                    <h3>Photo Slideshow App</h3>
+                    <p>Video Creation Platform</p>
+                </a>
+            </div>
+    
+            <div class="project-item">
+                <h3>BioMatch</h3>
+                <p>Open-Source Fingerprint Authentication</p>
+            </div>
+    
+            <div class="project-item">
+                <h3>IoT Smart Parking System</h3>
+                <p>Smart IoT based Parking Solution</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="achievements">
+        <h2>Achievements</h2>
+        <ul>
+            <li>Cleared various Olympiads during school time.</li>
+            <li>JEE Mains Rank: 778 (99.94 Percentile)</li>
+            <li>Developed innovative AI & IoT projects.</li>
+            <li>Freelance Web Developer with client delivery experience.</li>
+        </ul>
+    </section>
+    
+    <section id="text-analysis">
+        <h2>Text Analysis Tool</h2>
+        <textarea id="inputText" rows="12" placeholder="Paste or type your 10,000+ word text here..."></textarea>
+        <br>
+        <button onclick="analyzeText()" class="btn">Analyze Text</button>
+        <button onclick="downloadReport()" class="btn">Download Activity Report</button>
+        <div id="analysisResult"></div>
+    </section>
+
+    <section id="cv">
+        <h2>Download My CV</h2>
+        <a href="AnmolResume.pdf" download class="btn">Download CV</a>
+    </section>
+
+    <footer>
+        <p class="glow">&copy; 2025 Anmol Sharma</p>
+        <div class="social-icons">
+            <a href="https://www.instagram.com/anmol_sharma_006900" target="_blank">
+                <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/instagram.svg" alt="Instagram">
+            </a>
+            <a href="https://github.com/cyclomati" target="_blank">
+                <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/github.svg" alt="GitHub">
+            </a>
+            <a href="mailto:anmolsharma006900@gmail.com">
+                <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/gmail.svg" alt="Gmail">
+            </a>
+            <a href="https://www.linkedin.com/in/anmol-sharma-aab67a315/" target="_blank">
+                <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/linkedin.svg" alt="LinkedIn">
+        </div>
+    </footer>
+
+</body>
+
+</html>
