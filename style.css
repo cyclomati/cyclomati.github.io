@@ -328,3 +328,48 @@ section#education p {
   line-height: 1.6;
   font-size: 1rem;
 }
+/* Hamburger Icon (mobile only) */
+.hamburger {
+  display: none;
+  font-size: 2rem;
+  color: white;
+  background: linear-gradient(90deg, #8e2de2, #f107a3);
+  padding: 10px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  z-index: 1100;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Mobile Navbar - initially hidden */
+.navbar.mobile-hidden {
+  display: none;
+  flex-direction: column;
+  gap: 20px;
+  padding: 20px;
+  background: linear-gradient(90deg, #8e2de2, #f107a3);
+  position: absolute;
+  top: 70px;
+  left: 10px;
+  right: 10px;
+  border-radius: 14px;
+  z-index: 1000;
+}
+
+/* Responsive Toggle */
+@media (max-width: 768px) {
+  .hamburger {
+    display: block;
+  }
+
+  .navbar {
+    display: none;
+  }
+
+  .navbar.active {
+    display: flex;
+  }
+}

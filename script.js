@@ -119,4 +119,17 @@ const textList = [
   }
   
   typeWriter();
-  
+  // ========== HAMBURGER MENU ==========
+const hamburger = document.getElementById('hamburger');
+const navbar = document.getElementById('navbar');
+
+hamburger.addEventListener('click', () => {
+    navbar.classList.toggle('active');
+});
+
+// Optional: close menu on link click
+document.querySelectorAll('.navbar a').forEach(link => {
+    link.addEventListener('click', () => {
+        navbar.classList.remove('active');
+    });
+});
