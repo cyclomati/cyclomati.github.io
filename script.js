@@ -1,135 +1,85 @@
-// ========== DARK / LIGHT MODE ==========
-function toggleMode() {
-    document.body.classList.toggle('dark-mode');
+// ========== TYPEWRITER EFFECT ==========
+const textList = [
+    "Anmol Sharma", 
+    "Software Engineer", 
+    "Problem Solver", 
+    "Tech Enthusiast", 
+    "Gamer"
+];
+let currentText = 0;
+let currentChar = 0;
+function startTypewriter() {
+    const typeSpan = document.querySelector('.typewriter');
+    if (!typeSpan) return;
+
+    function typeWriter() {
+        if (currentChar < textList[currentText].length) {
+            typeSpan.textContent += textList[currentText].charAt(currentChar);
+            currentChar++;
+            setTimeout(typeWriter, 100);
+        } else {
+            setTimeout(() => {
+                typeSpan.textContent = '';
+                currentChar = 0;
+                currentText = (currentText + 1) % textList.length;
+                typeWriter();
+            }, 2000);
+        }
+    }
+
+    typeWriter();
 }
-
-// ========== USER ACTIVITY TRACKING ==========
-const userActivity = [];
-
-function logEvent(eventType, element) {
-    const timestamp = new Date().toISOString();
-    const elementType = element.tagName.toLowerCase();
-    const log = `${timestamp}, ${eventType}, ${elementType}`;
     
-    userActivity.push(log);
-    console.log(log);
+// ========== DARK/LIGHT MODE TOGGLE ==========
+function toggleTheme() {
+    document.body.classList.toggle('dark-mode');
+    const btn = document.querySelector('.theme-toggle');
+    btn.textContent = document.body.classList.contains('dark-mode') ? '☀️' : '🌙';
 }
 
-// Track Page Load
-window.addEventListener('load', () => {
-    logEvent('view', document.body);
-});
-
-// Track Clicks
-document.addEventListener('click', (e) => {
-    logEvent('click', e.target);
-});
-
-// ========== DOWNLOAD USER ACTIVITY ==========
-function downloadReport() {
-    const data = userActivity.join('\n');
-    const blob = new Blob([data], { type: 'text/plain' });
-    const url = URL.createObjectURL(blob);
-
-    const a = document.createElement('a');
-    a.href = url;
-    a.download = 'UserActivityReport.txt';
-    document.body.appendChild(a);
-    a.click();
-    document.body.removeChild(a);
-
-    URL.revokeObjectURL(url);
+// ========== MOBILE MENU TOGGLE ==========
+function toggleMenu() {
+    document.getElementById('navLinks').classList.toggle('active');
 }
 
-// ========== TEXT ANALYSIS TOOL ==========
-function analyzeText() {
-    const text = document.getElementById('inputText').value;
+document.addEventListener('DOMContentLoaded', () => {
+    startTypewriter();
 
-    // Basic Counts
-    const letters = (text.match(/[a-zA-Z]/g) || []).length;
-    const words = text.trim().split(/\s+/).length;
-    const spaces = (text.match(/ /g) || []).length;
-    const newlines = (text.match(/\n/g) || []).length;
-    const specialSymbols = (text.match(/[^a-zA-Z0-9\s]/g) || []).length;
-
-    // Tokenization
-    const tokens = (text.toLowerCase().match(/\b[a-z]+\b/g) || []);
-
-    // Word Groups
-    const pronouns = ['i', 'you', 'he', 'she', 'we', 'they', 'me', 'him', 'her', 'us', 'them', 'my', 'your', 'his', 'our', 'their'];
-    const prepositions = ['in', 'on', 'at', 'by', 'with', 'under', 'over', 'between', 'to', 'from', 'into', 'of', 'for', 'about'];
-    const articles = ['a', 'an'];
-
-    const countWords = (group) => {
-        const counts = {};
-        group.forEach(word => {
-            counts[word] = tokens.filter(token => token === word).length;
+    // ========== SMOOTH SCROLL ==========
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({ 
+                    behavior: 'smooth', 
+                    block: 'start' 
+                });
+                // Close mobile menu after clicking
+                document.getElementById('navLinks').classList.remove('active');
+            }
         });
-        return counts;
+    });
+
+    // ========== SCROLL ANIMATIONS ==========
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
     };
 
-    const result = `
-<h3>Basic Stats:</h3>
-<ul>
-  <li>Letters: ${letters}</li>
-  <li>Words: ${words}</li>
-  <li>Spaces: ${spaces}</li>
-  <li>Newlines: ${newlines}</li>
-  <li>Special Symbols: ${specialSymbols}</li>
-</ul>
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.opacity = '1';
+                entry.target.style.transform = 'translateY(0)';
+            }
+        });
+    }, observerOptions);
 
-<h3>Pronouns Count:</h3>
-<pre>${JSON.stringify(countWords(pronouns), null, 2)}</pre>
-
-<h3>Prepositions Count:</h3>
-<pre>${JSON.stringify(countWords(prepositions), null, 2)}</pre>
-
-<h3>Articles Count:</h3>
-<pre>${JSON.stringify(countWords(articles), null, 2)}</pre>
-    `;
-
-    document.getElementById('analysisResult').innerHTML = result;
-}
-
-const textList = [
-    "Anmol Sharma",
-    "Software Engineer",
-    "Problem Solver",
-    "Coding Enthusiast",
-    "Gamer"
-  ];
-  
-  let currentText = 0;
-  let currentChar = 0;
-  const typeSpan = document.querySelector('.typewriter');
-  
-  function typeWriter() {
-      if (currentChar < textList[currentText].length) {
-          typeSpan.innerHTML += textList[currentText].charAt(currentChar);
-          currentChar++;
-          setTimeout(typeWriter, 150);
-      } else {
-          setTimeout(() => {
-              typeSpan.innerHTML = '';
-              currentChar = 0;
-              currentText = (currentText + 1) % textList.length;
-              typeWriter();
-          }, 1000);
-      }
-  }
-  
-  typeWriter();
-  // ========== HAMBURGER MENU ==========
-const hamburger = document.getElementById('hamburger');
-const navbar = document.getElementById('navbar');
-
-hamburger.addEventListener('click', () => {
-    navbar.classList.toggle('active');
-});
-
-// Optional: close menu on link click
-document.querySelectorAll('.navbar a').forEach(link => {
-    link.addEventListener('click', () => {
-        navbar.classList.remove('active');
+    document.querySelectorAll('section').forEach(section => {
+        section.style.opacity = '0';
+        section.style.transform = 'translateY(30px)';
+        section.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+        observer.observe(section);
     });
 });
